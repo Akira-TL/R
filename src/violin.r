@@ -9,14 +9,15 @@ library(viridis)
 # 初始化变量,设置文件路径和文件名
 file_name <- "probly.csv"
 filter_criteria <- c("Almost Certainly", "Very Good Chance", "We Believe", "Likely", "About Even", "Little Chance", "Chances Are Slight", "Almost No Chance")
+file_type = ".png"
 
 # 判断系统环境,一键调用
 if (Sys.info()[["sysname"]] == "Windows") {
     file_path <- "C:/Users/Akira/desktop/"
-    output_file <- paste(file = file_path, file_name, ".png", sep = "")
+    output_file <- paste(file = file_path, file_name, file_type, sep = "")
 } else {
-    file_path <- "~/documents/"
-    outputFile <- paste(file = "~/documents/", file_name, ".png", sep = "")
+    file_path <- "~/project/R/data/"
+    output_file <- paste(file = "~/project/R/plot/", file_name, file_type, sep = "")
 }
 
 data <- read.csv(paste(file_path, file_name, sep = ""), sep = ",")
